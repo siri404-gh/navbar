@@ -1,0 +1,25 @@
+//
+// SCSS mixin for resetting default button styles
+//
+
+@mixin csms-a11y-button-reset() {
+  display: block;
+  overflow: visible;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  appearance: none;
+
+  @at-root {
+      button#{&}:not([aria-disabled="true"]) {
+          cursor: pointer;
+      }
+  }
+}

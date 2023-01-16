@@ -1,0 +1,249 @@
+//
+// NAVIGATION BAR
+//
+
+@import '../__mixins/a11y-button-reset';
+@import '../__mixins/a11y-focus-ring';
+@import '../__mixins/a11y-touch-area';
+@import '../../tokens/NavigationBar';
+@import './debug';
+
+// GENERAL DECLARATION
+
+.csms-navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: $token-navigation-bar-height;
+    padding: 0 $token-navigation-bar-slot-gap;
+    background-color: $token-navigation-bar-background-color;
+    color: $token-navigation-bar-color-base;
+}
+
+// SLOT (PRIMARY/SECONDARY)
+
+.csms-navigation-bar__slot {
+    display: flex;
+    // flex: 0 0 auto;
+    height: 100%;
+    min-width: $token-navigation-bar-slot-min-width;
+    // align-items: center;
+
+    // when there are two buttons or a button-link
+    &.csms-navigation-bar__slot--is-wide {
+        min-width: 2 * $token-navigation-bar-slot-min-width;
+    }
+}
+
+.csms-navigation-bar__slot--primary {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.csms-navigation-bar__slot--secondary {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+// ICON
+
+.csms-navigation-bar__icon {
+    @include csms-a11y-button-reset();
+    @include csms-a11y-focus-ring();
+
+    // position: relative;
+    // display: block;
+    // flex: 0 0 auto;
+    width: $token-navigation-bar-icon-width;
+    height: 100%;
+    padding-block: ($token-navigation-bar-height - $token-navigation-bar-icon-media-size) * 0.5;
+    padding-inline: ($token-navigation-bar-icon-width - $token-navigation-bar-icon-media-size) * 0.5;
+
+    &.csms-navigation-bar__icon--is-active {
+        color: $token-navigation-bar-color-active;
+    }
+
+    &.csms-navigation-bar__icon--is-disabled {
+        opacity: $token-navigation-bar-color-disabled-opacity;
+    }
+
+    .csms-navigation-bar__icon-notification { // the top/left values are calibrated visually with the designers
+        position: absolute;
+        top: 17px;
+        left: 33px;
+    }
+}
+
+.csms-navigation-bar__media {
+    height: 100%;
+}
+
+// TITLE
+
+.csms-navigation-bar__title {
+    @include csms-a11y-button-reset();
+    @include csms-a11y-focus-ring();
+
+    // position: relative;
+    flex: 1 1 auto;
+    height: 100%;
+    padding: 0 $token-navigation-bar-slot-gap;
+    color: $token-navigation-bar-color-title;
+    text-align: center;
+    min-width: 0;
+}
+
+// LOGO
+
+.csms-navigation-bar__logo {
+    @include csms-a11y-button-reset();
+    @include csms-a11y-focus-ring();
+
+    // position: relative;
+    // display: block;
+    flex: 0 0 auto;
+    width: $token-navigation-bar-logo-width;
+    height: 100%;
+    padding-block: ($token-navigation-bar-height - $token-navigation-bar-logo-height) * 0.5;
+    margin: 0 $token-navigation-bar-slot-gap;
+}
+
+
+// BUTTON TEXT
+
+.csms-navigation-bar__button {
+    @include csms-a11y-button-reset();
+    @include csms-a11y-focus-ring();
+
+    // position: relative;
+    // display: block;
+    min-width: $token-navigation-bar-slot-min-width;
+    width: 100%;
+    height: 100%;
+    padding-block: ($token-navigation-bar-height - $token-navigation-bar-button-height) * 0.2;
+    padding-inline: $token-navigation-bar-slot-gap;
+}
+
+.csms-navigation-bar__button-text {
+    // position: relative;
+    display: flex;
+    align-items: center;
+    height: $token-navigation-bar-button-height;
+    padding: 0 $token-navigation-bar-slot-gap;
+    color: $token-navigation-bar-color-button-text;
+
+    &.csms-navigation-bar__button-text--is-disabled {
+        opacity: $token-navigation-bar-color-disabled-opacity;
+    }
+}
+
+// PROFILE
+
+.csms-navigation-bar__profile {
+    @include csms-a11y-button-reset();
+    @include csms-a11y-focus-ring();
+
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: stretch;
+    overflow: hidden;
+    flex: 1 1 auto;
+    height: 100%;
+    // width: 100%;
+    // margin: 0 $token-navigation-bar-profile-gap;
+    padding-block: ($token-navigation-bar-height - $token-navigation-bar-profile-content-height) * 0.5;
+    padding-inline: $token-navigation-bar-slot-gap;
+    // text-align: left;
+    // min-width: 0;
+}
+
+.csms-navigation-bar__profile-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+}
+
+.csms-navigation-bar__profile-content-avatar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: $token-navigation-bar-profile-avatar-size;
+    height: $token-navigation-bar-profile-avatar-size;
+    // margin: auto;
+}
+
+.csms-navigation-bar__profile-content-right {
+    display: flex;
+    flex-direction: column;
+    padding-left: $token-navigation-bar-profile-avatar-size;
+    // height: 100%;
+    // overflow: hidden;
+    // width: calc(100% - 50px);
+}
+
+.csms-navigation-bar__profile-content-info {
+    margin-left: $token-navigation-bar-profile-spacing-avatar-text;
+    color: $token-navigation-bar-color-profile-info;
+}
+
+.csms-navigation-bar__profile-content-additional {
+    overflow: hidden;
+    // max-width: 100%;
+    margin-top: -$token-navigation-bar-profile-overlap-additional-info;
+    margin-left: $token-navigation-bar-profile-spacing-avatar-text;
+    color: $token-navigation-bar-color-profile-additional;
+
+    // on small devices some lexems get trimmed
+    @media (max-width: 320px) {
+        font-size: 11px;
+    }
+}
+
+// SEARCH
+
+.csms-navigation-bar__search {
+    flex: 1 1 auto;
+    // min-width: 0;
+    margin: 0 $token-navigation-bar-slot-gap;
+    text-align: left;
+}
+
+.csms-navigation-bar__input {
+    position: relative; // to keep in mind the problem of old devices, already in defaults.scss, but...
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 36px;
+    // Notice: there is no margin-left because the spacing on the left side of the component is controlled via the margins of the icon (which is always visible)
+    margin: 0 8px 0 0;
+    padding: 0;
+    border: none;
+    background: white;
+    appearance: none;
+    width: 100%;
+}
+
+/*
+// GENERIC CONTENT + OVERLAY
+
+.csms-navigation-bar__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    align-self: stretch;
+    min-width: 0;
+    margin: 0 $token-navigation-bar-gap;
+    text-align: center;
+}
+
+
+
+
+*/

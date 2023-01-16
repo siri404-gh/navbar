@@ -1,0 +1,33 @@
+// Navigation Bar
+$token-navigation-bar-height: 50px;
+
+// Slot
+$token-navigation-bar-slot-gap: 8px;
+$token-navigation-bar-slot-min-width: 44px;
+
+// Icon
+$token-navigation-bar-icon-width: 44px;
+$token-navigation-bar-icon-media-size: 24px;
+
+// Logo
+$token-navigation-bar-logo-width: 120px;
+$token-navigation-bar-logo-height: 36px;
+
+// Button
+$token-navigation-bar-button-height: 36px;
+
+// Profile
+$token-navigation-bar-profile-content-height: 36px;
+$token-navigation-bar-profile-avatar-size: 36px;
+$token-navigation-bar-profile-spacing-avatar-text: 12px;
+$token-navigation-bar-profile-overlap-additional-info: 2px;
+
+// Colors
+$token-navigation-bar-background-color: blueviolet;
+$token-navigation-bar-color-base: #6b6b6b;
+$token-navigation-bar-color-profile-info: #141414;
+$token-navigation-bar-color-profile-additional: #6b6b6b;
+$token-navigation-bar-color-button-text: #ffc629; // Overrides default '$token-navigation-bar-color-base'
+$token-navigation-bar-color-title: #141414;
+$token-navigation-bar-color-active: #ffc629;
+$token-navigation-bar-color-disabled-opacity: 0.4;

@@ -1,0 +1,26 @@
+//
+// SCSS mixin for adding keyboard focus ring
+//
+
+// TODO: all the styling is to be discussed later with design team
+// till then all the styles should be commented to prevent affecting production
+
+@mixin csms-a11y-focus-ring() {
+  //&:focus {
+  //    outline: 2px dotted $token-color-primary;
+  //    outline-offset: 2px;
+  //}
+  //
+  //&:focus:not(:focus-visible) {
+  //    outline: 0;
+  //}
+  //
+  //// an idea for click feedback. To be discussed with designers
+  //// probably doesn't make sense on current stage of a11y project
+  //@at-root {
+  //    button#{&}:active,
+  //    [role="button"]#{&}:active:not([disabled]) {
+  //        box-shadow: 0 0 5px 0 rgba($token-color-black, 0.2);
+  //    }
+  //}
+}

@@ -1,0 +1,31 @@
+// mixin to control position and state of extended touch area
+// for better visualisation when testing we try to stretch touch area over the whole parent, even if it's bigger than 44x44px
+// for aligning the area in one direction top: 0 / margin-top: 0 (left: 0 / margin-left: 0 etc) can be used
+
+@mixin csms-a11y-touch-area() {
+  &::before {
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      bottom: -50%;
+      left: -50%;
+      min-width: 100%;
+      width: $token-a11y-min-target-size;
+      min-height: 100%;
+      height: $token-a11y-min-target-size;
+      margin: auto;
+      content: '';
+
+      // default values can be overridden if the size or position of the area need correction
+      @content;
+  }
+
+  // class .csms-show-touch-area is used for presentational purposes to highlight touch areas
+  .csms-a11y-show-touch-area & {
+      box-shadow: 0 0 3px rgba(255, 0, 0, 0.7);
+
+      &::before {
+          background: rgba(255, 0, 0, 0.1);
+      }
+  }
+}

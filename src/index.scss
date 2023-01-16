@@ -1,0 +1,15 @@
+@import "./tokens/a11y";
+@import "./components/NavigationBar/NavigationBar";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #ccc;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

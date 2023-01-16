@@ -1,0 +1,18 @@
+// Debug (please don't remove)
+//
+// .csms-navigation-bar { outline: 1px solid black; }
+.csms-navigation-bar__slot { outline: 1px dashed black; }
+// .csms-navigation-bar__main { outline: 1px solid DarkOrange ; }
+.csms-navigation-bar__icon:nth-child(1) { background-color: #ffc629; }
+// .csms-navigation-bar__icon:nth-child(2) { background-color: #ffc629; }
+.csms-navigation-bar__media { outline: 1px dotted #808080; }
+// .csms-navigation-bar__media::after { outline: 1px dotted magenta; }
+
+.csms-navigation-bar__title { outline: 1px dashed cyan; }
+.csms-navigation-bar__logo { outline: 1px dashed lime; }
+// .csms-navigation-bar__content { outline: 1px solid blue; }
+.csms-navigation-bar__profile { outline: 1px dashed white; }
+.csms-navigation-bar__search { outline: 1px solid DarkCyan; }
+// .csms-navigation-bar__profile-content-avatar::after { background-color: hsla(190,100%,50%,0.3); }
+// .csms-navigation-bar__button { background-color: hsla(160,100%,50%,0.3); }
+// .csms-navigation-bar__button::after { outline: 1px dotted cyan; }
